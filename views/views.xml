@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_timeoff_report_tree" model="ir.ui.view">
+        <field name="name">timeoff.report.tree</field>
+        <field name="model">timeoff.report</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id" readonly="1"/>
+                <field name="leave_type_id" readonly="1"/>
+                <field name="start_date" readonly="1"/>
+                <field name="end_date" readonly="1"/>
+                <field name="remaining_days" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_timeoff_report" model="ir.actions.act_window">
+        <field name="name">Remaining Days Report</field>
+        <field name="res_model">timeoff.report</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="menu_timeoff_report" name="Remaining Days Report" parent="hr_holidays.menu_hr_holidays_report" action="rem_days_wizard_action"/>
+</odoo>

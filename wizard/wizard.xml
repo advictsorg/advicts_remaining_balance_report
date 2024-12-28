@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="rem_days_view_wizard_form" model="ir.ui.view">
+        <field name="name">remaining.days.wizard.form</field>
+        <field name="model">remaining.days.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="employee_id" required="1"/>
+                    <field name="start_date"/>
+                     <field name="end_date"/>
+                </group>
+                <footer>
+                    <button id="button_print" class="btn btn-primary" type="object" name="action_create_rem_report" string="Generate Report"/>
+                    <button string="Cancel" class="btn btn-secondary" special="cancel" data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="rem_days_wizard_action" model="ir.actions.act_window">
+        <field name="name">Remaining Days Report</field>
+        <field name="res_model">remaining.days.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="rem_days_view_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>
